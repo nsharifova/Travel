@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Slider:BaseEntity,IEntity
+    public class Slider:IEntity
     {
+        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string PhotoUrl { get; set; } = null!;

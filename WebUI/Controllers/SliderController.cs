@@ -1,10 +1,12 @@
 ﻿using Business.Abstract;
 using Entities;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
+using WebUI.ViewModels;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Microsoft.AspNetCore.Components.Route("api/[controller]")]
     [ApiController]
     public class SliderController : Controller
     {
@@ -27,5 +29,9 @@ namespace WebAPI.Controllers
             _SliderManager.Add(Slider);
             return Slider;
         }
+
+
+
+
     }
 }

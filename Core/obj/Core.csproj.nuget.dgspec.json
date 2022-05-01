@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lamiy\\Desktop\\Travel\\Core\\Core.csproj": {}
+    "C:\\Users\\lamiy\\Documents\\Travel\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lamiy\\Desktop\\Travel\\Core\\Core.csproj": {
+    "C:\\Users\\lamiy\\Documents\\Travel\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lamiy\\Desktop\\Travel\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\lamiy\\Documents\\Travel\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\lamiy\\Desktop\\Travel\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\lamiy\\Documents\\Travel\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\lamiy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lamiy\\Desktop\\Travel\\Core\\obj\\",
+        "outputPath": "C:\\Users\\lamiy\\Documents\\Travel\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lamiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

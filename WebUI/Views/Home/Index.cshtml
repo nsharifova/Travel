@@ -2,17 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model HomeVM
       <main id="content" class="site-main">
             <!-- ***home banner html start form here*** -->
             <section class="home-banner-section home-banner-slider">
-               <div class="home-banner d-flex flex-wrap align-items-center" style="background-image: url(assets/images/banner-img1.jpg);">
+       @foreach (var item in Model.Slider)
+       {
+                   <div class="home-banner d-flex flex-wrap align-items-center" style="background-image: url(@item.PhotoUrl);">
                   <div class="overlay"></div>
                   <div class="container">
                      <div class="banner-content text-center">
                         <div class="row">
                            <div class="col-lg-8 offset-lg-2">
-                              <h2 class="banner-title">JOURNEY TO EXPLORE WORLD</h2>
-                              <p>Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.</p>
+                              <h2 class="banner-title">@item.Title</h2>
+                              <p>@item.Description</p>
                               <div class="banner-btn">
                                  <a href="about.html" class="round-btn">LEARN MORE</a>
                                  <a href="booking.html" class="outline-btn outline-btn-white">BOOK NOW</a>
@@ -22,23 +25,8 @@
                      </div>
                   </div>
                </div>
-               <div class="home-banner d-flex flex-wrap align-items-center" style="background-image: url(assets/images/img7.jpg);">
-                  <div class="overlay"></div>
-                  <div class="container">
-                     <div class="banner-content text-center">
-                        <div class="row">
-                           <div class="col-lg-8 offset-lg-2">
-                              <h2 class="banner-title">BEAUTIFUL PLACE TO VISIT</h2>
-                              <p>Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos voluptatibus habitant? Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.</p>
-                              <div class="banner-btn">
-                                 <a href="about.html" class="round-btn">LEARN MORE</a>
-                                 <a href="booking.html" class="outline-btn outline-btn-white">BOOK NOW</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+       }
+     
             </section>
             <!-- ***home banner html end here*** -->
             <!-- ***Home search field html start from here*** -->
@@ -159,24 +147,27 @@
                      </div>
                   </div>
                   <div class="package-section">
-                     <article class="package-item">
-                        <figure class="package-image" style="background-image: url(assets/images/img4.jpg);"></figure>
+
+                      @foreach (var item in Model.Hotel)
+                      {
+                              <article class="package-item">
+                        <figure class="package-image" style="background-image: url(@item.PhotoUrl);"></figure>
                         <div class="package-content">
                            <h3>
                               <a href="package-detail.html">
-                                 EXPERIENCE THE GREAT HOLIDAY ON BEACH
+                                @item.Name
                               </a>
                            </h3>
-                           <p>Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.</p>
+                           <p>@item.Description</p>
                            <div class="package-meta">
                               <ul>
                                  <li>
                                     <i class="fas fa-clock"></i>
-                                    7D/6N
+                                 @item.DayNight
                                  </li>
                                  <li>
                                     <i class="fas fa-user-friends"></i>
-                                    pax: 10
+                                    pax: @item.Person
                                  </li>
                                  <li>
                                     <i class="fas fa-map-marker-alt"></i>
@@ -187,104 +178,23 @@
                         </div>
                         <div class="package-price">
                            <div class="review-area">
-                              <span class="review-text">(25 reviews)</span>
+                              <span class="review-text">(@item.Rating reviews)</span>
                               <div class="rating-start-wrap d-inline-block">
-                                 <div class="rating-start">
+                                 <div class="rating-start"> 
                                     <span style="width: 80%"></span>
                                  </div>
                               </div>
                            </div>
                            <h6 class="price-list">
-                              <span>$750</span>
+                              <span>@item.Price</span>
                               / per person
                            </h6>
                            <a href="booking.html" class="outline-btn outline-btn-white">Book now</a>
                         </div>
                      </article>
-                     <article class="package-item">
-                        <figure class="package-image" style="background-image: url(assets/images/img5.jpg);"></figure>
-                        <div class="package-content">
-                           <h3>
-                              <a href="package-detail.html">
-                                 SUMMER HOLIDAY TO THE OXOLOTAN RIVER
-                              </a>
-                           </h3>
-                           <p>Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.</p>
-                           <div class="package-meta">
-                              <ul>
-                                 <li>
-                                    <i class="fas fa-clock"></i>
-                                    5D/4N
-                                 </li>
-                                 <li>
-                                    <i class="fas fa-user-friends"></i>
-                                    pax: 10
-                                 </li>
-                                 <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Malaysia
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="package-price">
-                           <div class="review-area">
-                              <span class="review-text">(12 reviews)</span>
-                              <div class="rating-start-wrap d-inline-block">
-                                 <div class="rating-start">
-                                    <span style="width: 80%"></span>
-                                 </div>
-                              </div>
-                           </div>
-                           <h6 class="price-list">
-                              <span>$520</span>
-                              / per person
-                           </h6>
-                           <a href="booking.html" class="outline-btn outline-btn-white">Book now</a>
-                        </div>
-                     </article>
-                     <article class="package-item">
-                        <figure class="package-image" style="background-image: url(assets/images/img6.jpg);"></figure>
-                        <div class="package-content">
-                           <h3>
-                              <a href="package-detail.html">
-                                 SANTORINI ISLAND'S WEEKEND VACATION
-                              </a>
-                           </h3>
-                           <p>Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque, cras, aspernatur.</p>
-                           <div class="package-meta">
-                              <ul>
-                                 <li>
-                                    <i class="fas fa-clock"></i>
-                                    6D/5N
-                                 </li>
-                                 <li>
-                                    <i class="fas fa-user-friends"></i>
-                                    pax: 10
-                                 </li>
-                                 <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Malaysia
-                                 </li>
-                              </ul>
-                           </div>
-                        </div>
-                        <div class="package-price">
-                           <div class="review-area">
-                              <span class="review-text">(43 reviews)</span>
-                              <div class="rating-start-wrap d-inline-block">
-                                 <div class="rating-start">
-                                    <span style="width: 80%"></span>
-                                 </div>
-                              </div>
-                           </div>
-                           <h6 class="price-list">
-                              <span>$660</span>
-                              / per person
-                           </h6>
-                           <a href="booking.html" class="outline-btn outline-btn-white">Book now</a>
-                        </div>
-                     </article>
+                      }
+                 
+                
                      <div class="section-btn-wrap text-center">
                         <a href="package.html" class="round-btn">VIEW ALL PACKAGES</a>
                      </div>
@@ -293,7 +203,7 @@
             </section>
             <!-- ***Home package html end here*** -->
             <!-- ***Home callback html start from here*** -->
-            <section class="home-callback bg-img-fullcallback" style="background-image: url(assets/images/img7.jpg);">
+            <section class="home-callback bg-img-fullcallback" style="background-image: url(@Model.Promo.PhotoUrl);">
                <div class="overlay"></div>
                <div class="container">
                   <div class="row">
@@ -304,10 +214,10 @@
                                  <i class="fas fa-play"></i>
                               </a>
                            </div>
-                           <h2 class="section-title">ARE YOU READY TO TRAVEL? REMEMBER US !!</h2>
-                           <p>Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium. Sit ornare mollitia tenetur, aptent.</p>
+                           <h2 class="section-title">@Model.Promo.Title</h2>
+                           <p>@Model.Promo.Description</p>
                            <div class="callback-btn">
-                              <a href="package.html" class="round-btn">View Packages</a>
+                              <a style="background-color:@Model.Promo.Color" href="package.html" class="round-btn">View Packages</a>
                               <a href="about.html" class="outline-btn outline-btn-white">Learn More</a>
                            </div>
                         </div>
